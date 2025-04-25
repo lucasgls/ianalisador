@@ -1,31 +1,61 @@
+import os
+import openai
 import pandas as pd
 import streamlit as st
-import numpy as np
-from PIL import Image
-import requests
-from azure.core.credentials import AzureKeyCredential
-from azure.ai.textanalytics import TextAnalyticsClient
 from dotenv import load_dotenv
-import os
+from src.services.azure_ai_service import AzureAIService
+from azure.ai.formrecognizer import DocumentAnalysisClient
+from azure.core.credentials import AzureKeyCredential
+from azure.ai.formrecognizer import DocumentAnalysisClient
 
-# Load environment variables from a .env file
+
 load_dotenv()
+azure_service = AzureAIService()
+
 
 nomeServico = "IAnalisador 👀"
 
+st.set_page_config(
+    page_title="Analisador de Currículos",
+    page_icon="👀",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
 with st.sidebar:
     st.title("Vaga a ser preenchida 👇")
-    chart_selection = st.selectbox("Selecione a vaga que deseja Preencher", 
-                                    ("Vendedor", "Gerente de Vendas")
-                                    )
-
-st.title(f"Seja bem vindo ao {nomeServico}");
-st.write("Analisarei os dados do candidato e irei mandar dados relevantes sobre ele a seguir! ") 
+    chart_selection = st.selectbox(
+        "Selecione a vaga que deseja Preencher",
+        ("Gerente de Vendas", "Programador Junior")
+    )
 
 
-uploaded_file = st.file_uploader("Coloque aqui o currículo: ", type=["pdf"])
+st.title(f"Seja bem-vindo ao {nomeServico}")
+st.write("Analisarei os dados do candidato e irei mandar dados relevantes sobre ele a seguir!")
+
+
+uploaded_file = st.file_uploader("Coloque aqui o currículo:", type=["pdf"], accept_multiple_files=True)
+
+
 if uploaded_file:
-    image = Image.open(uploaded_file)
-else:
-    image = Image.open(requests.get("https://picsum.photos/200/120", stream=True).raw)
+    files = []
 
+    for file in uploaded_file:
+        file_bytes = file.read()
+        files.append(file_bytes)
+
+    for idx, file_bytes in enumerate(files, start=1):
+        document_analysis_client = DocumentAnalysisClient(
+            endpoint=os.getenv("AZURE_ENDPOINT"),
+            credential=AzureKeyCredential(os.getenv("AZURE_KEY"))
+        )
+
+        poller = document_analysis_client.begin_analyze_document(
+            model_id="prebuilt-document",
+            document=file_bytes
+        )
+
+        result = poller.result()
+
+        extracted_text = azure_service.extract_text_from_pdf(file_bytes)
+        st.text_area(f"Dados Extraído do Currículo {idx}", extracted_text, height= 500)
