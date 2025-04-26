@@ -1,51 +1,18 @@
 {
-    "vagas": 
-  [
-      {
-        "nome": "Gerente de Vendas",
-        "requisitos": {
-          "obrigatorios": [
-            "Experiência mínima de 5 anos em gestão de equipes comerciais",
-            "Domínio avançado de CRM (Salesforce ou similar)",
-            "Comprovada capacidade de atingir metas agressivas",
-            "Conhecimento em análise de dados de vendas",
-            "Habilidade em negociação estratégica"
-          ],
-          "desejaveis": [
-            "Certificação em gestão comercial",
-            "Experiência com mercado internacional",
-            "Conhecimento em técnicas de vendas consultivas",
-            "Inglês fluente",
-            "MBA em gestão"
-          ],
-          "pesos": {
-            "obrigatorios": 0.7,
-            "desejaveis": 0.3
-          }
-        }
-      },
-      {
-        "nome": "Programador Junior",
-        "requisitos": {
-          "obrigatorios": [
-            "Conhecimento em lógica de programação",
-            "Domínio básico de Python ou JavaScript",
-            "Noções de versionamento com Git",
-            "Entendimento de banco de dados relacional",
-            "Capacidade de trabalhar em equipe"
-          ],
-          "desejaveis": [
-            "Familiaridade com frameworks (Django/React)",
-            "Noções de cloud computing (AWS/Azure)",
-            "Conhecimento básico de Docker",
-            "Experiência com metodologias ágeis",
-            "Inglês técnico"
-          ],
-          "pesos": {
-            "obrigatorios": 0.6,
-            "desejaveis": 0.4
-          }
-        }
-      }
-  ]
+  "Gerente de Vendas": {
+      "requisitos": [
+          "Experiência mínima de 5 anos em vendas",
+          "Liderança de equipes comerciais",
+          "Domínio de CRM e métricas de vendas",
+          "Habilidades de negociação avançada"
+      ]
+  },
+  "Programador Junior": {
+      "requisitos": [
+          "Conhecimento em Python e JavaScript",
+          "Noções básicas de bancos de dados",
+          "Disposição para aprender novas tecnologias",
+          "Experiência acadêmica ou projetos pessoais"
+      ]
+  }
 }
