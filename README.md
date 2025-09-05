@@ -8,7 +8,7 @@ Sistema inteligente para análise de compatibilidade entre currículos e vagas d
 - Análise de compatibilidade com vagas disponíveis
 - Interface web intuitiva com Streamlit
 
-##💻 Tecnologias
+## 💻 Tecnologias
 
 - **Python 3.13+**
 - **Streamlit** - Interface web
@@ -28,3 +28,4 @@ Sistema inteligente para análise de compatibilidade entre currículos e vagas d
    ```bash
    poetry run streamlit run app.py
    ```
+
