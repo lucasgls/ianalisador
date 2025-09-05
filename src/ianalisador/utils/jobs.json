@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "titulo_vaga": "Estágio em Marketing Digital",
+      "descricao": "Auxiliar na criação de campanhas online, gestão de redes sociais e análise de métricas.",
+      "tempo_experiencia": "0-1 ano",
+      "habilidades_requeridas": ["Redes Sociais", "Google Analytics", "SEO", "Comunicação"]
+    },
+    {
+      "id": 2,
+      "titulo_vaga": "Assistente de Vendas",
+      "descricao": "Atendimento a clientes, elaboração de propostas e apoio ao time comercial.",
+      "tempo_experiencia": "1 ano",
+      "habilidades_requeridas": ["Negociação", "CRM", "Excel", "Comunicação"]
+    },
+    {
+      "id": 3,
+      "titulo_vaga": "Analista Contábil Júnior",
+      "descricao": "Responsável por lançamentos contábeis, conciliações e apoio no fechamento mensal.",
+      "tempo_experiencia": "1-2 anos",
+      "habilidades_requeridas": ["Contabilidade", "Excel Avançado", "ERP", "Análise de Dados"]
+    },
+    {
+      "id": 4,
+      "titulo_vaga": "Estágio em Recursos Humanos",
+      "descricao": "Auxiliar em recrutamento e seleção, treinamento e controle de benefícios.",
+      "tempo_experiencia": "0-1 ano",
+      "habilidades_requeridas": ["Excel", "Comunicação", "Organização", "Relacionamento Interpessoal"]
+    },
+    {
+      "id": 5,
+      "titulo_vaga": "Estágio em Desenvolvimento Back-End",
+      "descricao": "Dar suporte na implementação de APIs e manutenção de sistemas em Java.",
+      "tempo_experiencia": "0-1 ano",
+      "habilidades_requeridas": ["Java", "Spring Boot", "SQL", "Git"]
+    },
+    {
+      "id": 6,
+      "titulo_vaga": "Designer Gráfico Júnior",
+      "descricao": "Criar peças visuais para campanhas, redes sociais e materiais institucionais.",
+      "tempo_experiencia": "1 ano",
+      "habilidades_requeridas": ["Photoshop", "Illustrator", "Figma", "Criatividade"]
+    },
+    {
+      "id": 7,
+      "titulo_vaga": "Estágio em Administração",
+      "descricao": "Auxiliar na elaboração de relatórios, organização de documentos e apoio administrativo.",
+      "tempo_experiencia": "0-1 ano",
+      "habilidades_requeridas": ["Excel", "Organização", "Comunicação", "Gestão de Documentos"]
+    },
+    {
+      "id": 8,
+      "titulo_vaga": "Analista Financeiro Júnior",
+      "descricao": "Realizar lançamentos financeiros, conciliação bancária e relatórios de fluxo de caixa.",
+      "tempo_experiencia": "1-2 anos",
+      "habilidades_requeridas": ["Excel", "ERP Financeiro", "Matemática Financeira", "Organização"]
+    },
+    {
+      "id": 9,
+      "titulo_vaga": "Estágio em Jornalismo",
+      "descricao": "Produzir conteúdo, revisar textos e apoiar na assessoria de imprensa.",
+      "tempo_experiencia": "0-1 ano",
+      "habilidades_requeridas": ["Redação", "Ortografia", "Comunicação", "Mídias Digitais"]
+    },
+    {
+      "id": 10,
+      "titulo_vaga": "Suporte Técnico em TI",
+      "descricao": "Atender chamados, configurar equipamentos e prestar suporte a usuários.",
+      "tempo_experiencia": "1 ano",
+      "habilidades_requeridas": ["Windows/Linux", "Redes", "Atendimento ao Cliente", "SQL Básico"]
+    }
+  ]  
