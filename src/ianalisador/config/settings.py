@@ -6,7 +6,7 @@ APP_VERSION = "1.0.0"
 APP_DESCRIPTION = "Sistema inteligente para análise de compatibilidade entre currículos e vagas"
 
 PAGE_CONFIG = {
-    "page_title": IAnalisador,
+    "page_title": "IAnalisador",
     "page_icon": "🤖",
     "layout": "wide",
     "initial_sidebar_state": "expanded",

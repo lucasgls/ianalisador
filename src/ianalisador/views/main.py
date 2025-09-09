@@ -1,5 +1,7 @@
 import streamlit as st
 
+from src.ianalisador.utils.jobs_database import JobsDatabase
+
 def run_app():
     st.set_page_config(
         page_title="Analisador de Currículos IA",
@@ -13,7 +15,7 @@ def run_app():
         
         chart_selection = st.selectbox(
             "📋 Escolha a vaga para análise:",
-            ("Gerente de Vendas", "Programador Junior"),
+            JobsDatabase().get_jobs_title(),
             help="Selecione a vaga para comparar com o currículo enviado"
         )
         
@@ -34,6 +36,3 @@ def run_app():
         type="pdf",
         help="Selecione um arquivo PDF com o currículo para análise"
     )
-    
-    if uploaded_file is not None:
-        st.success("✅ Arquivo carregado com sucesso!")

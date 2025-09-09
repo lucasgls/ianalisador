@@ -24,4 +24,7 @@ class JobsDatabase:
             if vaga["titulo_vaga"] == titulo:
                 return vaga
     
-    
+    def get_jobs_title(self):
+        vagas = self._ler_json()
+        
+        return [vaga["titulo_vaga"] for vaga in vagas]
