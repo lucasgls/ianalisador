@@ -1,13 +1,14 @@
 import streamlit as st
 
 from src.ianalisador.utils.jobs_database import JobsDatabase
+from src.ianalisador.config import settings
 
 def run_app():
     st.set_page_config(
-        page_title="Analisador de Currículos IA",
-        page_icon="🤖",
-        layout="wide",
-        initial_sidebar_state="expanded",
+        page_title=settings.PAGE_CONFIG["page_title"],
+        page_icon=settings.PAGE_CONFIG["page_icon"],
+        layout=settings.PAGE_CONFIG["layout"],
+        initial_sidebar_state=settings.PAGE_CONFIG["initial_sidebar_state"],
     )
 
     with st.sidebar:
@@ -16,8 +17,10 @@ def run_app():
         chart_selection = st.selectbox(
             "📋 Escolha a vaga para análise:",
             JobsDatabase().get_jobs_title(),
-            help="Selecione a vaga para comparar com o currículo enviado"
+            help="Selecione a vaga para comparar com o currículo enviado",
+            index=0
         )
+        
         st.divider()
         
         st.subheader("🚀 Análise Inteligente")

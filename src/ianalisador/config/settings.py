@@ -1,5 +1,8 @@
 import os
 from typing import List
+from dotenv import load_dotenv
+
+load_dotenv()
 
 APP_NAME = "Analisador de Currículos IA"
 APP_VERSION = "1.0.0"
@@ -14,11 +17,15 @@ PAGE_CONFIG = {
 
 ALLOWED_FILE_TYPES = ["pdf"]
 MAX_FILE_SIZE_MB = 10
+JOBS_FILE_PATH = "src/ianalisador/utils/jobs.json"
 
-AI_CONFIG = {
-    "provider": "openai",  
-    "model": "gpt-3.5-turbo",
-    "max_tokens": 1000,
+AZURE_CONFIG = {
+    "endpoint": os.getenv("AZURE_COGNIZER_ENDPOINT"),
+    "key": os.getenv("AZURE_COGNIZER_KEY"),
 }
 
-JOBS_FILE_PATH = "src/ianalisador/utils/jobs.json"
+OPENAI_CONFIG = {
+    "endpoint": os.getenv("AZURE_OPENAI_ENDPOINT"),
+    "key": os.getenv("OPENAI_API_KEY"),
+    "max_tokens": 1000,
+}
