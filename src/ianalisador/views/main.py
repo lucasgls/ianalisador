@@ -18,7 +18,6 @@ def run_app():
             JobsDatabase().get_jobs_title(),
             help="Selecione a vaga para comparar com o currículo enviado"
         )
-        
         st.divider()
         
         st.subheader("💡 Como usar:")
@@ -26,10 +25,31 @@ def run_app():
         st.write("2. Faça upload do currículo em PDF")
         st.write("3. Aguarde a análise da IA")
     
-    st.title("Analisador de Currículos IA 🤖")
+    st.title("Analisador de Currículos IA ")
     
+    with st.container(border=True):
+        st.subheader(f"📋 Vaga: {chart_selection}")
 
-    st.write(f"Vaga selecionada: **{chart_selection}**")
+        vaga = JobsDatabase().get_job_by_title(chart_selection)
+
+        if vaga:
+            col1, col2, col3 = st.columns([1, 2, 1])
+            
+            with col1:
+                st.metric("**ID da Vaga:**", f"#{vaga['id']}")
+            
+            with col2:
+                st.write("**📝 Descrição da Vaga:**")
+                st.write(vaga["descricao"])
+                st.write("**⏰ Experiência Necessária:**")
+                st.write(vaga["tempo_experiencia"])
+                
+            with col3:            
+                st.write("**🛠️ Habilidades Requeridas:**")
+                for habilidade in vaga["habilidades_requeridas"]:
+                    st.write(f"• {habilidade}")
+        else:
+            st.error("❌ Vaga não encontrada!") 
     
     uploaded_file = st.file_uploader(
         "📄 Faça upload do currículo (PDF)",
