@@ -20,10 +20,10 @@ def run_app():
         )
         st.divider()
         
-        st.subheader("💡 Como usar:")
-        st.write("1. Selecione a vaga desejada")
-        st.write("2. Faça upload do currículo em PDF")
-        st.write("3. Aguarde a análise da IA")
+        st.subheader("🚀 Análise Inteligente")
+        st.write("• Compare seu currículo com vagas reais")
+        st.write("• Receba feedback instantâneo da IA")
+        st.write("• Descubra suas chances de contratação")
     
     st.title("Analisador de Currículos IA ")
     
@@ -36,7 +36,7 @@ def run_app():
             col1, col2, col3 = st.columns([1, 2, 1])
             
             with col1:
-                st.metric("**ID da Vaga:**", f"#{vaga['id']}")
+                st.metric("**🔢 ID da Vaga:**", f"#{vaga['id']}")
             
             with col2:
                 st.write("**📝 Descrição da Vaga:**")
@@ -47,12 +47,13 @@ def run_app():
             with col3:            
                 st.write("**🛠️ Habilidades Requeridas:**")
                 for habilidade in vaga["habilidades_requeridas"]:
-                    st.write(f"• {habilidade}")
+                    st.write(f"- {habilidade}")
         else:
             st.error("❌ Vaga não encontrada!") 
     
-    uploaded_file = st.file_uploader(
-        "📄 Faça upload do currículo (PDF)",
+    uploaded_files = st.file_uploader(
+        "📄 Faça upload dos currículos (PDF)",
         type="pdf",
-        help="Selecione um arquivo PDF com o currículo para análise"
+        help="Selecione um ou mais arquivos PDF com os currículos para análise",
+        accept_multiple_files=True
     )
